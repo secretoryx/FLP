@@ -4,7 +4,7 @@ const studentData = [
     name: 'John Doe',
     fatherName: 'Robert Doe',
     marks: 85
-    course : Nursing
+    Course: Nursing
   },
   {
     rollNumber: '002',
@@ -37,7 +37,7 @@ document.getElementById('student-form').addEventListener('submit', function (eve
     nameCell.textContent = studentInfo.name;
     fatherNameCell.textContent = studentInfo.fatherName;
     marksCell.textContent = studentInfo.marks;
-    CourseCell.textContent -studentInfo.marks;
+    CourseCell.textContent -studentInfo.Course;
   } else {
     alert('No student found with the entered roll number.');
   }
