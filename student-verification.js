@@ -31,11 +31,13 @@ document.getElementById('student-form').addEventListener('submit', function (eve
     const nameCell = newRow.insertCell();
     const fatherNameCell = newRow.insertCell();
     const marksCell = newRow.insertCell();
+    const CourseCell = newRow.insertCell();
 
     rollNumberCell.textContent = studentInfo.rollNumber;
     nameCell.textContent = studentInfo.name;
     fatherNameCell.textContent = studentInfo.fatherName;
     marksCell.textContent = studentInfo.marks;
+    CourseCell.textContent -studentInfo.marks;
   } else {
     alert('No student found with the entered roll number.');
   }
