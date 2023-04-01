@@ -4,7 +4,6 @@ const studentData = [
     name: 'John Doe',
     fatherName: 'Robert Doe',
     marks: 85
-   
   },
   {
     rollNumber: '002',
