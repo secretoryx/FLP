@@ -462,23 +462,27 @@ secretoryx
 
                                 <script>
                                     const studentData = [
-                                        {
-                                            rollNumber: '2023078',
-                                            name: 'Haroon Badshah',
-                                            fatherName: 'Zulfiqar Ali Shah',
-                                            Date: 02/04/2023,
-                                            certificateUrl: '/certificate/2023078.pdf'
-                                        },
+  {
+    rollNumber: '2023078',
+    name: 'Haroon Badshah',
+    fatherName: 'Zulfiqar Ali Shah',
+    marks: 90,
+    date: '2023-03-31',
+    session: 'Morning',
+    certificateUrl: '/certificate/2023078.pdf'
+  },
+  {
+    rollNumber: '2023079',
+    name: 'Jane Doe',
+    fatherName: 'William Doe',
+    marks: 80,
+    date: '2023-03-31',
+    session: 'Evening',
+    certificateUrl: 'https://example.com/certificate2.pdf'
+  },
+  // Add more student data here
+];
 
-                                        {
-                                            rollNumber: '2023079',
-                                            name: 'Jane Doe',
-                                            fatherName: 'William Doe',
-                                            Date: 90,
-                                            certificateUrl: 'https://example.com/certificate2.pdf'
-                                        },
-                                        // Add more student data here
-                                    ];
 
                                     document.getElementById('student-form').addEventListener('submit', function (event) {
                                         event.preventDefault();
@@ -492,15 +496,20 @@ secretoryx
                                         if (studentInfo) {
                                             const newRow = tableBody.insertRow();
 
-                                            const rollNumberCell = newRow.insertCell();
-                                            const nameCell = newRow.insertCell();
-                                            const fatherNameCell = newRow.insertCell();
-                                            const DateCell = newRow.insertCell();
+const rollNumberCell = newRow.insertCell();
+const nameCell = newRow.insertCell();
+const fatherNameCell = newRow.insertCell();
+const marksCell = newRow.insertCell();
+const dateCell = newRow.insertCell();
+const sessionCell = newRow.insertCell();
 
-                                            rollNumberCell.textContent = studentInfo.rollNumber;
-                                            nameCell.textContent = studentInfo.name;
-                                            fatherNameCell.textContent = studentInfo.fatherName;
-                                            DateCell.textContent = studentInfo.Date;
+rollNumberCell.textContent = studentInfo.rollNumber;
+nameCell.textContent = studentInfo.name;
+fatherNameCell.textContent = studentInfo.fatherName;
+marksCell.textContent = studentInfo.marks;
+dateCell.textContent = studentInfo.date;
+sessionCell.textContent = studentInfo.session;
+
 
                                             const certificateDownloadButton = document.getElementById('certificate-download-button');
                                             certificateDownloadButton.href = studentInfo.certificateUrl;
