@@ -466,9 +466,9 @@ https://templatemo.com/tm-587-tiya-golf-club
                                     const studentData = [
                                         {
                                             rollNumber: '2023078',
-                                            name: 'Muhammad Zeeshan',
-                                            fatherName: 'Malak Dad',
-                                            marks: 80,
+                                            name: 'Haroon Badshah',
+                                            fatherName: 'Zulfiqar Ali Shah',
+                                            Date: 02/04/2023,
                                             certificateUrl: '/certificate/2023078.pdf'
                                         },
 
@@ -497,12 +497,12 @@ https://templatemo.com/tm-587-tiya-golf-club
                                             const rollNumberCell = newRow.insertCell();
                                             const nameCell = newRow.insertCell();
                                             const fatherNameCell = newRow.insertCell();
-                                            const marksCell = newRow.insertCell();
+                                            const DateCell = newRow.insertCell();
 
                                             rollNumberCell.textContent = studentInfo.rollNumber;
                                             nameCell.textContent = studentInfo.name;
                                             fatherNameCell.textContent = studentInfo.fatherName;
-                                            marksCell.textContent = studentInfo.marks;
+                                            DateCell.textContent = studentInfo.marks;
 
                                             const certificateDownloadButton = document.getElementById('certificate-download-button');
                                             certificateDownloadButton.href = studentInfo.certificateUrl;
