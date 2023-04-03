@@ -1,9 +1,9 @@
 const studentData = [
   {
     rollNumber: '2023078',
-    name: 'John Doe',
-    fatherName: 'Robert Doe',
-    marks: 85
+    name: 'Syed Haroon Badshah',
+    fatherName: 'Zulfiqar Ali Shah',
+    Date: 2/04/2023
   },
   {
     rollNumber: '002',
@@ -29,12 +29,12 @@ document.getElementById('student-form').addEventListener('submit', function (eve
     const rollNumberCell = newRow.insertCell();
     const nameCell = newRow.insertCell();
     const fatherNameCell = newRow.insertCell();
-    const marksCell = newRow.insertCell();
+    const DateCell = newRow.insertCell();
 
     rollNumberCell.textContent = studentInfo.rollNumber;
     nameCell.textContent = studentInfo.name;
     fatherNameCell.textContent = studentInfo.fatherName;
-    marksCell.textContent = studentInfo.marks;
+    DateCell.textContent = studentInfo.marks;
   } else {
     alert('No student found with the entered roll number.');
   }
