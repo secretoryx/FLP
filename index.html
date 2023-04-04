@@ -49,11 +49,46 @@
         <main>
             
       
-	    <!DOCTYPE html>
+	   <!DOCTYPE html>
 <html>
 <head>
 	<title>My Website</title>
 	<!-- Your head content here -->
+	<style>
+		/* Loader styles */
+		.loader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #f1f1f1;
+			z-index: 9999;
+		}
+
+		.loader-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border: 8px solid #3498db;
+			border-top: 8px solid #f1f1f1;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+
+		/* Hide the content until the page is fully loaded */
+		.content {
+			display: none;
+		}
+	</style>
 </head>
 <body>
 	<!-- Paste the loader code here -->
@@ -69,17 +104,13 @@
 
 	<!-- Your JavaScript code here -->
 	<script>
-		// When the page is fully loaded, hide the loader and show the content
-		window.addEventListener("load", function() {
+		// Wait for 3 seconds before hiding the loader and showing the content
+		setTimeout(function() {
 			const loader = document.querySelector(".loader");
 			loader.className += " hidden";
 			const content = document.querySelector(".content");
 			content.style.display = "block";
-			// Redirect to a different URL after a 3 second delay
-			setTimeout(function() {
-				window.location.href = "_blank";
-			}, 3000);
-		});
+		}, 3000);
 	</script>
 </body>
 </html>
