@@ -104,6 +104,113 @@ https://templatemo.com/tm-587-tiya-golf-club
                     </div>
                 </div>
             </nav>
+            
+            <!DOCTYPE html>
+<html>
+<head>
+	<title>My HTML Site</title>
+	<style>
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #fff;
+			z-index: 9999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.loader {
+			display: inline-block;
+			position: relative;
+			width: 80px;
+			height: 80px;
+			margin: 0 20px;
+		}
+
+		.loader div {
+			position: absolute;
+			top: 33px;
+			width: 13px;
+			height: 13px;
+			border-radius: 50%;
+			background: #3498db;
+			animation-timing-function: cubic-bezier(0, 1, 1, 0);
+		}
+
+		.loader div:nth-child(1) {
+			left: 8px;
+			animation: loader1 0.6s infinite;
+		}
+
+		.loader div:nth-child(2) {
+			left: 8px;
+			animation: loader2 0.6s infinite;
+		}
+
+		.loader div:nth-child(3) {
+			left: 32px;
+			animation: loader2 0.6s infinite;
+		}
+
+		.loader div:nth-child(4) {
+			left: 56px;
+			animation: loader3 0.6s infinite;
+		}
+
+		@keyframes loader1 {
+			0% {
+				transform: scale(0);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		@keyframes loader3 {
+			0% {
+				transform: scale(1);
+			}
+			100% {
+				transform: scale(0);
+			}
+		}
+
+		@keyframes loader2 {
+			0% {
+				transform: translate(0, 0);
+			}
+			100% {
+				transform: translate(24px, 0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="preloader">
+		<div class="loader">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<h3>Loading...</h3>
+	</div>
+
+	<!-- Your HTML content goes here -->
+
+	<script>
+		window.addEventListener("load", function() {
+			document.querySelector("#preloader").style.display = "none";
+		});
+	</script>
+</body>
+</html>
+
+
 
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">                
                 <div class="offcanvas-header">
