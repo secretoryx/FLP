@@ -50,7 +50,7 @@ document.getElementById('student-form').addEventListener('submit', function (eve
       sessionCell.textContent = studentInfo.session;
 
       const downloadButton = document.createElement('button');
-      downloadButton.textContent = 'Download';
+      downloadButton.textContent = 'Get';
       downloadButton.className = 'download-button';
       downloadCell.appendChild(downloadButton);
 
