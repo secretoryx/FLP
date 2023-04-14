@@ -38,14 +38,12 @@ document.getElementById('student-form').addEventListener('submit', function (eve
   if (studentInfo) {
       const newRow = tableBody.insertRow();
 
-      const rollNumberCell = newRow.insertCell();
       const nameCell = newRow.insertCell();
       const fatherNameCell = newRow.insertCell();
       const marksCell = newRow.insertCell();
       const sessionCell = newRow.insertCell();
       const downloadCell = newRow.insertCell();
 
-      rollNumberCell.textContent = studentInfo.rollNumber;
       nameCell.textContent = studentInfo.name;
       fatherNameCell.textContent = studentInfo.fatherName;
       marksCell.textContent = studentInfo.marks;
