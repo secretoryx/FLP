@@ -23,6 +23,16 @@ const studentData = [
       session: '2019-2021',
       certificateUrl: '/certificate/2023104.pdf'
   },
+  
+  {
+      rollNumber: '2011187',
+      name: 'TAYYABA JABEEN',
+      fatherName: 'FAZLUR REHMAN',
+      marks: 1692,
+      session: '2001-2003',
+      certificateUrl: '/certificate/2011187.pdf'
+  },
+  
   // Add more student data here
 ];
 
