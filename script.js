@@ -28,8 +28,32 @@ const studentData = [
       name: 'TAYYABA JABEEN',
       fatherName: 'FAZLUR REHMAN',
       marks: 1692,
-      session: '2001-2003',
+      session: '2001 2003',
       certificateUrl: '/certificate/2011187.pdf'
+  },
+  {
+      rollNumber: '2023191',
+      name: 'SAIMA RAZAQ',
+      fatherName: 'MUHAMMAD RAZAQ',
+      marks: 1677,
+      session: '2002 2004',
+      certificateUrl: '/certificate/2023192.pdf'
+  },
+  {
+      rollNumber: '2023193',
+      name: 'FIZZA TANVEER',
+      fatherName: 'M.AMJAD TANVEER',
+      marks: 1722,
+      session: '2015 2016',
+      certificateUrl: '/certificate/2023193.pdf'
+  },
+  {
+      rollNumber: '2091252',
+      name: 'NADIA BIBI',
+      fatherName: 'AKHTAR HUSSAIN',
+      marks: 1633,
+      session: '2018 2020',
+      certificateUrl: '/certificate/2091252.pdf'
   },
   
   // Add more student data here
