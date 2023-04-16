@@ -1,52 +1,38 @@
 <!DOCTYPE html>
-<html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
 <head>
-    <title>Cookie Example</title>
-    <style>
-        #cookie-example {
-            display: none;
-            margin: 0 auto;
-            max-width: 90%;
-        }
-    </style>
-    <script>
-        function openPopup() {
-            var popup = window.open("", "cookie-popup", "width=600,height=400");
-            popup.document.write('<html><head><title>Cookie Example</title><link rel="stylesheet" href="style.css"></head><body><div id="cookie-example">' + document.getElementById("cookie-example").innerHTML + '</div><script src="script.js"></script></body></html>');
-            popup.document.close();
-        }
-
-        window.addEventListener("click", function(event) {
-            if (event.target == window) {
-                window.close();
-            }
-        });
-    </script>
+  <meta charset="UTF-8">
+  <title>Cookie Constent Box | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cookie Example</h1>
-    <button onclick="openPopup()">Cookie Example</button>
-    <div id="cookie-example">
-        <button onclick="setCookie()">Set Cookie</button>
-        <button onclick="readCookie()">Read Cookie</button>
-        <button onclick="deleteCookie()">Delete Cookie</button>
-
-        <script>
-            function setCookie() {
-                document.cookie = "name=value; expires=Thu, 01 Jan 2099 00:00:00 GMT; path=/";
-                alert("Cookie set!");
-            }
-
-            function readCookie() {
-                var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                alert("Cookie value: " + cookieValue);
-            }
-
-            function deleteCookie() {
-                document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-                alert("Cookie deleted!");
-            }
-        </script>
+  <div class="wrapper">
+    <img src="#" alt="">
+    <div class="content">
+      <header>Cookies Consent</header>
+      <p>This website use cookies to ensure you get the best experience on our website.</p>
+      <div class="buttons">
+        <button class="item">I understand</button>
+        <a href="#" class="item">Learn more</a>
+      </div>
     </div>
+  </div>
+  <script>
+    const cookieBox = document.querySelector(".wrapper"),
+    acceptBtn = cookieBox.querySelector("button");
+    acceptBtn.onclick = ()=>{
+      //setting cookie for 1 month, after one month it'll be expired automatically
+      document.cookie = "CookieBy=CodingNepal; max-age="+60*60*24*30;
+      if(document.cookie){ //if cookie is set
+        cookieBox.classList.add("hide"); //hide cookie box
+      }else{ //if cookie not set then alert an error
+        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+      }
+    }
+    let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); //checking our cookie
+    //if cookie is set then hide the cookie box else show it
+    checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+  </script>
 </body>
 </html>
