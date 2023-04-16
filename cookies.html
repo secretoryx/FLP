@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cookie Example</title>
+    <title>Cookie Example</title>
+    <style>
+        #cookie-example {
+            display: none;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+    </style>
+    <script>
+        function openPopup() {
+            var popup = window.open("", "cookie-popup", "width=600,height=400");
+            popup.document.write('<html><head><title>Cookie Example</title><link rel="stylesheet" href="style.css"></head><body><div id="cookie-example">' + document.getElementById("cookie-example").innerHTML + '</div><script src="script.js"></script></body></html>');
+            popup.document.close();
+        }
+
+        window.addEventListener("click", function(event) {
+            if (event.target == window) {
+                window.close();
+            }
+        });
+    </script>
 </head>
 <body>
-	<h1>Cookie Example</h1>
-	<button onclick="setCookie()">Set Cookie</button>
-	<button onclick="readCookie()">Read Cookie</button>
-	<button onclick="deleteCookie()">Delete Cookie</button>
+    <h1>Cookie Example</h1>
+    <button onclick="openPopup()">Cookie Example</button>
+    <div id="cookie-example">
+        <button onclick="setCookie()">Set Cookie</button>
+        <button onclick="readCookie()">Read Cookie</button>
+        <button onclick="deleteCookie()">Delete Cookie</button>
 
-	<script>
-		function setCookie() {
-			document.cookie = "name=value; expires=Thu, 01 Jan 2099 00:00:00 GMT; path=/";
-			alert("Cookie set!");
-		}
+        <script>
+            function setCookie() {
+                document.cookie = "name=value; expires=Thu, 01 Jan 2099 00:00:00 GMT; path=/";
+                alert("Cookie set!");
+            }
 
-		function readCookie() {
-			var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-			alert("Cookie value: " + cookieValue);
-		}
+            function readCookie() {
+                var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                alert("Cookie value: " + cookieValue);
+            }
 
-		function deleteCookie() {
-			document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-			alert("Cookie deleted!");
-		}
-	</script>
+            function deleteCookie() {
+                document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+                alert("Cookie deleted!");
+            }
+        </script>
+    </div>
 </body>
 </html>
