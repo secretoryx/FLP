@@ -548,33 +548,85 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-5 col-12 mx-auto">
-                        <h4 class="mb-4 pb-lg-2">Please join us!</h4>
+                        
+			    <div class="col-lg-5 col-12 mx-auto">
+                            <h4 class="mb-4 pb-lg-2">Please join us!</h4>
                             <form action="#" method="post" class="custom-form membership-form shadow-lg" role="form">
                                 <h4 class="text-white mb-4">Become a member</h4>
 
-                                    <div class="form-floating">
-                                        <input type="text" name="full-name" id="full-name" class="form-control" placeholder="Full Name" required="">
-                                        
-                                        <label for="floatingInput">Full Name</label>
-                                    </div>
-
-                                    <div class="form-floating">
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
-                                        
-                                        <label for="floatingInput">Email</label>
-                                    </div>
-
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Describe message here"></textarea>
-                                        
-                                        <label for="floatingTextarea"> Comments</label>
-                                    </div>
-
-                                    <button type="submit" class="form-control">Submit</button>
+                                <div class="form-floating">
+                                    <input type="text" name="full-name" id="full-name" class="form-control"
+                                        placeholder="Full Name" required="">
+                                    <label for="floatingInput">Full Name</label>
                                 </div>
+
+                                <div class="form-floating">
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                        class="form-control" placeholder="Email address" required="">
+                                    <label for="floatingInput">Email</label>
+                                </div>
+
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" name="message"
+                                        placeholder="Describe message here"></textarea>
+                                    <label for="floatingTextarea">Comments</label>
+                                </div>
+
+                                <button type="submit" class="form-control">Submit</button>
                             </form>
                         </div>
+
+                        <script>
+                            // Initialize Firebase
+                            var firebaseConfig = {
+                                apiKey: "AIzaSyB2eBFncCWLlYcx8BkB-htuLS4jIZwNvb0",
+                                authDomain: "site-check-ac5c9.firebaseapp.com",
+                                databaseURL: "https://site-check-ac5c9-default-rtdb.firebaseio.com",
+                                projectId: "site-check-ac5c9",
+                                storageBucket: "site-check-ac5c9.appspot.com",
+                                messagingSenderId: "219066906342",
+                                appId: "1:219066906342:web:7a9cabf51c87099a8bad27",
+                            };
+                            firebase.initializeApp(firebaseConfig);
+
+                            // Get a reference to the database service
+                            var database = firebase.database();
+
+                            // Get a reference to the form and the form fields
+                            var form = document.querySelector('.membership-form');
+                            var fullNameField = form.querySelector('#full-name');
+                            var emailField = form.querySelector('#email');
+                            var messageField = form.querySelector('#message');
+
+                            // Add an event listener to the form submit button
+                            form.addEventListener('submit', function (event) {
+                                event.preventDefault(); // Prevent the form from submitting normally
+
+                                // Get the form data
+                                var fullName = fullNameField.value;
+                                var email = emailField.value;
+                                var message = messageField.value;
+
+                                // Store the data in the Firebase database
+                                var newMemberRef = database.ref('members').push();
+                                newMemberRef.set({
+                                    fullName: fullName,
+                                    email: email,
+                                    message: message
+                                });
+
+                                // Clear the form fields
+                                fullNameField.value = '';
+                                emailField.value = '';
+                                messageField.value = '';
+
+                                // Show a success message to the user
+                                alert('Thank you for becoming a member!');
+                            });
+                        </script>
+                    </body>
+
+                    </html>
 
                     </div>
                 </div>
