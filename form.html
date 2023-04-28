@@ -466,16 +466,19 @@ https://templatemo.com/tm-587-tiya-golf-club
                                                                             <textarea name="Message" id="message"
                                                                                 rows="5"></textarea>
                                                                         </div>
-                                                                        <input type="hidden" name="_subject"
-                                                                            value="New Membership Submission">
-                                                                        <input type="hidden" name="_next"
-                                                                            value="thankyou.html">
+                                                                        
+                                                                        <div class="g-recaptcha" data-sitekey="6Les3cUlAAAAAOXlISa_ePIwNXKqs3ryUq2URtgA" data-callback="onRecaptchaSuccess"></div>
                                                                         <input type="submit" value="Submit">
                                                                     </form>
                                                                 </div>
                                                             </div>
+                                                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                                            <script>
+                                                                function onRecaptchaSuccess() {
+                                                                    console.log("reCAPTCHA validation successful!");
+                                                                }
+                                                            </script>
                                                         </body>
-
                                                         </html>
 
 
