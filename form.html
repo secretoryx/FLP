@@ -451,7 +451,17 @@ https://templatemo.com/tm-587-tiya-golf-club
                                                                         
                                                                      <div class="g-recaptcha" data-sitekey="6Les3cUlAAAAAOXlISa_ePIwNXKqs3ryUq2URtgA" data-callback="onRecaptchaSuccess"></div>
                                                                      <p></p>
-                                                                        <input type="submit" value="Submit">
+                                                                     <script>
+                                                                        function onRecaptchaSuccess() {
+                                                                            console.log("reCAPTCHA validation successful!");
+                                                                            document.getElementById("submit-btn").removeAttribute("disabled");
+                                                                        }
+                                                                    </script>
+                                                                    
+                                                                
+                                                                    
+                                                                    <input id="submit-btn" type="submit" value="Submit" disabled>
+                                                                    
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -460,6 +470,7 @@ https://templatemo.com/tm-587-tiya-golf-club
                                                                 function onRecaptchaSuccess() {
                                                                     console.log("reCAPTCHA validation successful!");
                                                                 }
+                                                                
                                                             </script>
                                                         </body>
                                                         </html>
