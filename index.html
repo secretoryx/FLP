@@ -219,53 +219,72 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
             </section>
 		
-		<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
-	<title>My HTML Site</title>
+	<title>Spinning Circle Loader</title>
 	<style>
-		
+		.loader-container {
+			position: relative;
+			height: 100vh; /* or set a fixed height */
+		}
 
-	.loader {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-}
+		.loader {
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 64px;
+			height: 64px;
+		}
 
-.loader div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #000;
-  border-radius: 50%;
-  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #000 transparent transparent transparent;
-}
+		.loader div {
+			box-sizing: border-box;
+			display: block;
+			position: absolute;
+			width: 51px;
+			height: 51px;
+			margin: 6px;
+			border: 6px solid #000;
+			border-radius: 50%;
+			animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+			border-color: #000 transparent transparent transparent;
+		}
 
-.loader div:nth-child(1) {
-  animation-delay: -0.45s;
-}
+		.loader div:nth-child(1) {
+			animation-delay: -0.45s;
+		}
 
-.loader div:nth-child(2) {
-  animation-delay: -0.3s;
-}
+		.loader div:nth-child(2) {
+			animation-delay: -0.3s;
+		}
 
-.loader div:nth-child(3) {
-  animation-delay: -0.15s;
-}
+		.loader div:nth-child(3) {
+			animation-delay: -0.15s;
+		}
 
-@keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+		@keyframes loader {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loader-container">
+		<div class="loader">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+
 
 	</style>
 </head>
